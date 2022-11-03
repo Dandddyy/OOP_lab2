@@ -22,10 +22,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-    int GetASize(){return aSize;}
-    int GetSize(){return size;}
-
 private slots:
     void on_action_triggered();
 
@@ -33,15 +29,7 @@ private slots:
 
     void slot(QString a, QString b, QString c, bool d);
 
-    void slot2(QString item);
-
-    void slot3(QString item);
-
     void slot4(QString a, QString b, QString c, bool d);
-
-    void slot6(QString item);
-
-    void slot7(QString item);
 
     void slotTimerAlarm();
 
@@ -49,13 +37,19 @@ private slots:
 
     void AlgTimer(int iter);
 
-    void strToInt(std::string time, int iter);
+    void strToInt(std::string time, int iter, bool CH);
 
-    void AlarmAlg(std::string time, std::string time1, int iter);
+    void AlarmAlg(std::string time, std::string time1, int iter, bool CH);
+
+    bool DoNotDisturb(std::string firstT, std::string secondT, std::string currentT);
 
     void on_toolButton_clicked();
 
     void on_toolButton_2_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -83,9 +77,8 @@ private:
     int aSize;
     bool checkbox[20];
     bool acheckbox[20];
-
-signals:
-    void signal1(std::string[20], int);
-    void signal5(std::string[20], int);
+    std::string finalList[40];
+    int finalListSize;
+    int Result[40];
 };
 #endif // MAINWINDOW_H

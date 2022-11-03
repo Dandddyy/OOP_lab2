@@ -11,26 +11,23 @@ CONFIG += c++17
 SOURCES += \
     addalarmwindow.cpp \
     addtimerwindow.cpp \
-    listalarmwindow.cpp \
-    listtimerwindow.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     addalarmwindow.h \
     addtimerwindow.h \
-    listalarmwindow.h \
-    listtimerwindow.h \
     mainwindow.h
 
 FORMS += \
     addalarmwindow.ui \
     addtimerwindow.ui \
-    listalarmwindow.ui \
-    listtimerwindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resource.qrc
