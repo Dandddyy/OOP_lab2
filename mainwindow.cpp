@@ -310,7 +310,7 @@ bool MainWindow::DoNotDisturb(std::string firstT, std::string secondT, std::stri
         sminute[1] = currentT[4];
         icurrentT = atoi(shour.c_str())*60 + atoi(sminute.c_str());
 
-        if(ifirstT < isecondT){
+        if(ifirstT <= isecondT){
             if(ifirstT <= icurrentT && icurrentT <= isecondT){
                 check = false;
             }
@@ -453,7 +453,7 @@ void MainWindow::slot(QString a, QString b, QString c, bool d)
     size++;
     ui->pushButton->show();
     ui->pushButton_2->show();
-    ui->pushButton_3->click();
+    sortFunc();
 }
 
 void MainWindow::slot4(QString a, QString b, QString c, bool d)
@@ -507,7 +507,7 @@ void MainWindow::slot4(QString a, QString b, QString c, bool d)
     ui->pushButton_2->show();
     finalListSize++;
     aSize++;
-    ui->pushButton_3->click();
+    sortFunc();
 }
 
 void MainWindow::slotTimerAlarm()
@@ -652,7 +652,12 @@ void MainWindow::on_pushButton_2_clicked()
     }
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_comboBox_currentIndexChanged(int index)
+{
+    sortFunc();
+}
+
+void MainWindow::sortFunc()
 {
     QString text = ui->comboBox->currentText();
 

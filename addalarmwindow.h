@@ -2,6 +2,7 @@
 #define ADDALARMWINDOW_H
 #include <string>
 #include <QDialog>
+#include <QTime>
 
 namespace Ui {
 class AddAlarmWindow;

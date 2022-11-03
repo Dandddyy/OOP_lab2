@@ -21,6 +21,7 @@ void AddAlarmWindow::on_pushButton_2_clicked()
 
 void AddAlarmWindow::on_pushButton_clicked()
 {
+    int checkForSpace = 0;
     bool checkbox = false;
     QString LineText = "";
     QString Name = "";
@@ -35,8 +36,19 @@ void AddAlarmWindow::on_pushButton_clicked()
     if(LineText.size() > 20){
         ui->label_3->setText("Більше 20 символів");
     }
+    for(int i = 0; i < Name.size(); i++){
+        if(Name[i] == ' '){
+            checkForSpace++;
+        }
+    }
+    if(checkForSpace == Name.size()){
+        Name = "";
+    }
+    if(time == QTime::currentTime().toString("hh:mm")){
+        ui->label_5->setText("Теперішній час");
+    }
     if(Name.size() <= 20){
-        if(LineText.size() <= 20){
+        if(LineText.size() <= 20 && time != QTime::currentTime().toString("hh:mm")){
             emit signal4(time, LineText, Name, checkbox);
             close();
         }

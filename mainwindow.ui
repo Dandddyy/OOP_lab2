@@ -425,7 +425,7 @@ background-color: rgb(163, 3, 47);
      <rect>
       <x>90</x>
       <y>100</y>
-      <width>233</width>
+      <width>301</width>
       <height>20</height>
      </rect>
     </property>
@@ -438,38 +438,6 @@ background-color: rgb(163, 3, 47);
 
     color: black;
     font: bold;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>322</x>
-      <y>100</y>
-      <width>69</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::StrongFocus</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font-family: &quot;Segoe UI&quot;;
-    font-size: 8pt;
-    border: 1px solid;
-    border-color: rgb(192,192,192); 
-    border-radius: 3px; 
- background-color: rgb(230,230,230);
-    color: black;
-    font: bold;</string>
-    </property>
-    <property name="text">
-     <string>Застосувати</string>
     </property>
    </widget>
   </widget>
